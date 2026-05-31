@@ -40,7 +40,7 @@ export default async function SearchResults({ query }: { query: string }) {
           return (
             <Link
               key={`${bookSlug}-${hadith.hadithNumber}`}
-              href={`/${bookSlug}?bab=${hadith.chapterId}`}
+              href={`/${bookSlug}/hadis/${hadith.hadithNumber}`}
               style={{ textDecoration: 'none' }}
             >
               <div className="result-card" style={{
