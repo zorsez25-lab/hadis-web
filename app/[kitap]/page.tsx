@@ -4,6 +4,7 @@ import { getKitap, KITAPLAR } from '@/lib/kitaplar';
 import { getChapters, getHadithsByChapter } from '@/lib/hadis-utils';
 import { Hadith } from '@/lib/types';
 import KopyalaButon from '@/components/KopyalaButon';
+import ReaderSidebar from './ReaderSidebar';
 
 export async function generateStaticParams() {
   return KITAPLAR.map((k) => ({ kitap: k.slug }));
@@ -31,54 +32,12 @@ export default async function KitapPage({ params, searchParams }: Props) {
     <div className="reader-layout" style={{ display: 'flex', height: 'calc(100vh - 80px)', overflow: 'hidden', background: 'var(--bg)' }}>
 
       {/* ── Sidebar: chapters ── */}
-      <aside className="reader-sidebar" style={{
-        width: 280,
-        flexShrink: 0,
-        background: 'var(--surface)',
-        borderRight: '1px solid var(--border)',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-      }}>
-        {/* Book header */}
-        <div style={{
-          background: `linear-gradient(160deg, ${meta.from}, ${meta.to})`,
-          padding: '18px 18px 14px',
-          flexShrink: 0,
-        }}>
-          <div style={{ fontSize: 22, fontWeight: 900, color: '#fff', letterSpacing: -0.3 }}>{meta.turkishName}</div>
-          <div className="arabic" style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', marginTop: 2, lineHeight: 1.6 }}>{meta.arabicName}</div>
-          <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', marginTop: 8, fontWeight: 600 }}>
-            {chapters.length} bab · {meta.totalHadiths.toLocaleString('tr-TR')} hadis
-          </div>
-        </div>
-
-        {/* Chapter list */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '6px 0' }}>
-          {chapters.map((ch) => {
-            const active = ch.id.toString() === babId;
-            return (
-              <Link key={ch.id} href={`/${slug}?bab=${ch.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-                <div style={{
-                  padding: '9px 14px 9px 16px',
-                  background: active ? `${meta.to}14` : 'transparent',
-                  borderLeft: active ? `3px solid ${meta.to}` : '3px solid transparent',
-                  display: 'flex',
-                  gap: 10,
-                  alignItems: 'flex-start',
-                }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: active ? meta.to : 'var(--text-3)', minWidth: 24, paddingTop: 1, flexShrink: 0 }}>
-                    {ch.id}
-                  </span>
-                  <span style={{ fontSize: 13, fontWeight: active ? 700 : 400, color: active ? 'var(--text-1)' : 'var(--text-2)', lineHeight: 1.45 }}>
-                    {ch.turkishName || ch.englishName}
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </aside>
+      <ReaderSidebar
+        meta={{ ...meta, slug }}
+        chapters={chapters}
+        babId={babId}
+        slug={slug}
+      />
 
       {/* ── Main: hadiths ── */}
       <main className="reader-main" style={{ flex: 1, overflowY: 'auto', padding: '32px 48px 80px' }}>
@@ -144,7 +103,7 @@ function HadithCard({ hadith, color, kitap }: { hadith: Hadith; color: string; k
   return (
     <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, overflow: 'hidden', boxShadow: 'var(--shadow-sm)' }}>
       {/* Header */}
-      <div style={{ padding: '10px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border)', background: 'var(--surface-2)' }}>
+      <div style={{ padding: '10px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border)', background: 'var(--surface-2)', flexWrap: 'wrap', gap: 6 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <div style={{ background: `${color}12`, border: `1px solid ${color}22`, borderRadius: 7, padding: '3px 11px', fontSize: 12, fontWeight: 700, color }}>
             #{no}
