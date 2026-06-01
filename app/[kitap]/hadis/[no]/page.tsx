@@ -33,8 +33,8 @@ export default async function HadisDetayPage({ params }: Props) {
         borderBottom: '1px solid var(--border)',
         background: 'var(--surface)',
         padding: '0 40px',
-      }}>
-        <div style={{ maxWidth: 860, margin: '0 auto', padding: '16px 0 14px', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+      }} className="detail-header-wrap">
+        <div className="breadcrumb-wrap" style={{ maxWidth: 860, margin: '0 auto', padding: '16px 0 14px', display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
           <Link href={`/${slug}`} style={{ textDecoration: 'none' }}>
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -52,7 +52,7 @@ export default async function HadisDetayPage({ params }: Props) {
           <span style={{ color: 'var(--text-3)', fontSize: 14 }}>›</span>
           <span style={{ fontSize: 14, color: 'var(--text-1)', fontWeight: 700 }}>Hadis #{displayNo}</span>
 
-          <div style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
+          <div className="breadcrumb-actions" style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
             {prev && (
               <Link href={`/${slug}/hadis/${prev.hadithNumber}`} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '5px 14px', borderRadius: 8, border: '1px solid var(--border)', background: 'var(--surface-2)', fontSize: 13, fontWeight: 600, color: 'var(--text-2)', cursor: 'pointer' }}>← Önceki</div>
@@ -68,7 +68,7 @@ export default async function HadisDetayPage({ params }: Props) {
       </div>
 
       {/* ── Content ── */}
-      <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 40px 80px' }}>
+      <div className="detail-content" style={{ maxWidth: 860, margin: '0 auto', padding: '32px 40px 80px' }}>
 
         {/* Title */}
         <div style={{ marginBottom: 24 }}>

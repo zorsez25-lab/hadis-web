@@ -57,15 +57,42 @@ html {
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
 
+/* ── Tablet (≤900px) ── */
 @media (max-width: 900px) {
   .reader-layout { flex-direction: column !important; height: auto !important; overflow: visible !important; }
-  .reader-sidebar { width: 100% !important; height: 220px !important; border-right: none !important; border-bottom: 1px solid var(--border) !important; }
-  .reader-main { padding: 20px 16px 80px !important; }
+  .reader-sidebar { width: 100% !important; height: 200px !important; border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  .reader-main { padding: 24px 20px 80px !important; }
   .books-grid { grid-template-columns: 1fr 1fr !important; }
   .hero-stats { gap: 10px !important; }
+  .hero-inner { padding: 48px 24px 56px !important; }
+  .books-section { padding: 40px 24px 80px !important; }
+  .detail-header-inner { padding: 0 20px !important; }
+  .detail-content { padding: 24px 20px 60px !important; }
+  .raviler-header { padding: 28px 24px 32px !important; }
+  .raviler-content { padding: 28px 24px 60px !important; }
+  .ravi-detail-content { padding: 28px 24px 60px !important; }
+  .ravi-detail-header { padding: 28px 24px 36px !important; }
 }
 
-@media (max-width: 600px) {
+/* ── Mobile (≤640px) ── */
+@media (max-width: 640px) {
   .navbar-links { display: none !important; }
   .books-grid { grid-template-columns: 1fr !important; }
+  .hero-inner { padding: 36px 16px 44px !important; }
+  .hero-title { font-size: 34px !important; letter-spacing: -0.5px !important; }
+  .hero-subtitle { font-size: 15px !important; }
+  .hero-stats { margin-top: 24px !important; }
+  .books-section { padding: 28px 16px 60px !important; }
+  .reader-main { padding: 16px 14px 80px !important; }
+  .reader-sidebar { height: 180px !important; }
+  .detail-header-inner { padding: 0 14px !important; }
+  .detail-content { padding: 16px 14px 60px !important; }
+  .breadcrumb-wrap { flex-wrap: wrap !important; gap: 4px !important; }
+  .breadcrumb-actions { margin-left: 0 !important; width: 100% !important; margin-top: 8px !important; justify-content: flex-start !important; }
+  .raviler-header { padding: 24px 16px 28px !important; }
+  .raviler-content { padding: 20px 16px 60px !important; }
+  .ravi-detail-header { padding: 24px 16px 28px !important; }
+  .ravi-detail-content { padding: 20px 16px 60px !important; }
+  .ravi-grid { grid-template-columns: 1fr !important; }
+  .footer { padding: 20px 16px !important; flex-wrap: wrap !important; gap: 10px !important; justify-content: center !important; }
 }

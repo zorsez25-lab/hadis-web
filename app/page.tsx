@@ -9,16 +9,16 @@ export default function HomePage() {
     <div style={{ background: 'var(--bg)', minHeight: '100vh' }}>
       {/* Hero */}
       <div style={{ background: 'linear-gradient(160deg, #071510 0%, #0F2D1F 40%, #1B4332 75%, #2D6A4F 100%)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div className="hero-padding" style={{ maxWidth: 1160, margin: '0 auto', padding: '72px 40px 80px' }}>
+        <div className="hero-inner" style={{ maxWidth: 1160, margin: '0 auto', padding: '72px 40px 80px' }}>
           <div style={{ maxWidth: 640 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
               <div style={{ width: 6, height: 6, background: '#52B788', borderRadius: '50%' }} />
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(183,228,199,0.6)', letterSpacing: 2 }}>KUTUB-U SİTTE</span>
             </div>
-            <h1 style={{ fontSize: 52, fontWeight: 900, color: '#F0EAD6', letterSpacing: -1.5, lineHeight: 1.05, marginBottom: 18 }}>
+            <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: '#F0EAD6', letterSpacing: -1.5, lineHeight: 1.05, marginBottom: 18 }}>
               Hadis<br />Külliyatı
             </h1>
-            <p style={{ fontSize: 17, color: 'rgba(183,228,199,0.65)', lineHeight: 1.8, marginBottom: 36, maxWidth: 460 }}>
+            <p className="hero-subtitle" style={{ fontSize: 17, color: 'rgba(183,228,199,0.65)', lineHeight: 1.8, marginBottom: 36, maxWidth: 460 }}>
               Altı temel hadis kitabı — sened zinciri analizi, ravi biyografileri ve gelişmiş arama ile birlikte.
             </p>
             <SearchBar placeholder="Kelime, konu veya hadis numarası ara..." />
@@ -41,7 +41,7 @@ export default function HomePage() {
       </div>
 
       {/* Books */}
-      <div style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 40px 100px' }}>
+      <div className="books-section" style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 40px 100px' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 28 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-1)' }}>Hadis Kitapları</h2>
           <span style={{ fontSize: 13, color: 'var(--text-3)' }}>6 eser</span>
@@ -101,7 +101,7 @@ export default function HomePage() {
         }
       `}</style>
 
-      <div style={{ borderTop: '1px solid var(--border)', padding: '20px 40px', display: 'flex', justifyContent: 'center', gap: 32 }}>
+      <div className="footer" style={{ borderTop: '1px solid var(--border)', padding: '20px 40px', display: 'flex', justifyContent: 'center', gap: 32 }}>
         <span style={{ fontSize: 12, color: 'var(--text-3)' }}>Hadis Külliyatı</span>
         <span style={{ fontSize: 12, color: 'var(--text-3)' }}>Kutub-u Sitte</span>
         <span style={{ fontSize: 12, color: 'var(--text-3)' }}>Narrator Disambiguation</span>

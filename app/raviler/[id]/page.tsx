@@ -17,8 +17,8 @@ export default async function RaviDetayPage({ params }: Props) {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh' }}>
       {/* Header */}
-      <div style={{ background: 'linear-gradient(135deg, #081C15 0%, #1B4332 55%, #2D6A4F 100%)', padding: '36px 32px 40px' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+      <div style={{ background: 'linear-gradient(135deg, #081C15 0%, #1B4332 55%, #2D6A4F 100%)' }} className="ravi-detail-header-wrap">
+        <div className="ravi-detail-header" style={{ maxWidth: 900, margin: '0 auto', padding: '36px 32px 40px' }}>
           <Link href="/raviler" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 18 }}>
             <span style={{ color: 'rgba(183,228,199,0.7)', fontSize: 13 }}>←</span>
             <span style={{ color: 'rgba(183,228,199,0.7)', fontSize: 13, fontWeight: 600 }}>Raviler</span>
@@ -35,8 +35,8 @@ export default async function RaviDetayPage({ params }: Props) {
         </div>
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '36px 32px 80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+      <div className="ravi-detail-content" style={{ maxWidth: 900, margin: '0 auto', padding: '36px 32px 80px' }}>
+        <div className="ravi-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
           {/* Bilgiler */}
           <div style={{ background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: 16, padding: '22px 24px', gridColumn: '1 / -1' }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-muted)', letterSpacing: 1.5, marginBottom: 16 }}>BİLGİLER</div>
