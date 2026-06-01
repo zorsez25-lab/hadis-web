@@ -85,6 +85,16 @@ export const KITAPLAR: BookMeta[] = [
     totalHadiths: 1985,
     translationPending: true,
   },
+  {
+    slug: 'riyazussalihin',
+    file: 'riyazussalihin_ar.json',
+    turkishName: 'Riyâzü\'s-Sâlihîn',
+    arabicName: 'رياض الصالحين',
+    from: '#1A3B2A',
+    to: '#2E7D52',
+    totalHadiths: 1896,
+    translationPending: true,
+  },
 ];
 
 export function getKitap(slug: string): BookMeta | undefined {

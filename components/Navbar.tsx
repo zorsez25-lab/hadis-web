@@ -13,6 +13,7 @@ const KITAPLAR_NAV = [
   { slug: 'darimi', label: 'Dârimî' },
   { slug: 'ahmed', label: 'Ahmed' },
   { slug: 'malik', label: 'Muvatta' },
+  { slug: 'riyazussalihin', label: 'Riyâzü\'s-Sâlihîn' },
 ];
 
 export default function Navbar() {
