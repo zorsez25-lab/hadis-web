@@ -23,7 +23,7 @@ export async function getChapters(slug: string): Promise<Chapter[]> {
 
 export async function getHadithsByChapter(slug: string, babId: string): Promise<Hadith[]> {
   const book = await loadBook(slug);
-  return book.hadiths.filter((h) => h.chapterId === babId);
+  return book.hadiths.filter((h) => String(h.chapterId) === babId);
 }
 
 export async function searchHadiths(query: string): Promise<Array<{ hadith: Hadith; bookSlug: string; bookName: string; chapterName: string }>> {
