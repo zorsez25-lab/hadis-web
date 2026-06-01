@@ -9,6 +9,7 @@ export const KITAPLAR: BookMeta[] = [
     from: '#1B4332',
     to: '#2D6A4F',
     totalHadiths: 7589,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'muslim',
@@ -18,6 +19,7 @@ export const KITAPLAR: BookMeta[] = [
     from: '#880E4F',
     to: '#AD1457',
     totalHadiths: 7453,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'tirmizi',
@@ -27,6 +29,7 @@ export const KITAPLAR: BookMeta[] = [
     from: '#6B1A1A',
     to: '#9B3A3A',
     totalHadiths: 3956,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'ebudavud',
@@ -36,6 +39,7 @@ export const KITAPLAR: BookMeta[] = [
     from: '#7A5C00',
     to: '#B8860B',
     totalHadiths: 5274,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'ibnmace',
@@ -45,6 +49,7 @@ export const KITAPLAR: BookMeta[] = [
     from: '#4A1A6B',
     to: '#7B3FA0',
     totalHadiths: 4341,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'nesai',
@@ -54,6 +59,7 @@ export const KITAPLAR: BookMeta[] = [
     from: '#0F4D4D',
     to: '#1A7A7A',
     totalHadiths: 5758,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'darimi',
@@ -64,6 +70,7 @@ export const KITAPLAR: BookMeta[] = [
     to: '#2E6DA4',
     totalHadiths: 3406,
     translationPending: true,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'ahmed',
@@ -74,6 +81,7 @@ export const KITAPLAR: BookMeta[] = [
     to: '#8B4513',
     totalHadiths: 1374,
     translationPending: true,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'malik',
@@ -84,6 +92,7 @@ export const KITAPLAR: BookMeta[] = [
     to: '#4A4A8B',
     totalHadiths: 1985,
     translationPending: true,
+    kategori: 'kutubu-tisa',
   },
   {
     slug: 'riyazussalihin',
@@ -94,6 +103,7 @@ export const KITAPLAR: BookMeta[] = [
     to: '#B5294E',
     totalHadiths: 1896,
     translationPending: true,
+    kategori: 'secme-eserler',
   },
 ];
 

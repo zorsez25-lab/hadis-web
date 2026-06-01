@@ -34,4 +34,5 @@ export interface BookMeta {
   to: string;
   totalHadiths: number;
   translationPending?: boolean;
+  kategori?: 'kutubu-tisa' | 'secme-eserler';
 }
