@@ -3,22 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
-const KITAPLAR_NAV = [
-  { slug: 'bukhari', label: 'Buhârî' },
-  { slug: 'muslim', label: 'Müslim' },
-  { slug: 'tirmizi', label: 'Tirmizî' },
-  { slug: 'ebudavud', label: 'Ebû Dâvûd' },
-  { slug: 'ibnmace', label: 'İbn Mâce' },
-  { slug: 'nesai', label: 'Nesâî' },
-  { slug: 'darimi', label: 'Dârimî' },
-  { slug: 'ahmed', label: 'Ahmed' },
-  { slug: 'malik', label: 'Muvatta' },
-  { slug: 'bulugh', label: 'Bulûğu\'l-Merâm' },
-  { slug: 'semail', label: 'Şemâil' },
-  { slug: 'mishkat', label: 'Mişkât' },
-  { slug: 'edeblmufrad', label: 'el-Edebü\'l-Müfred' },
-  { slug: 'riyazussalihin', label: 'Riyâzü\'s-Sâlihîn' },
-];
 
 export default function Navbar() {
   const router = useRouter();
@@ -83,8 +67,8 @@ export default function Navbar() {
 
           {/* Nav links - desktop */}
           <div className="navbar-links" style={{ display: 'flex', gap: 2, flex: 1, alignItems: 'center' }}>
+            <NavLink href="/" label="Kitaplar" />
             <NavLink href="/raviler" label="Raviler" accent />
-            {KITAPLAR_NAV.map(k => <NavLink key={k.slug} href={`/${k.slug}`} label={k.label} />)}
           </div>
 
           {/* Spacer on mobile */}
@@ -174,11 +158,8 @@ export default function Navbar() {
 
             {/* Links */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <MobileLink href="/" label="Kitaplar" onClick={() => setMenuOpen(false)} />
               <MobileLink href="/raviler" label="Raviler" onClick={() => setMenuOpen(false)} accent />
-              <div style={{ height: 1, background: 'var(--border)', margin: '8px 0' }} />
-              {KITAPLAR_NAV.map(k => (
-                <MobileLink key={k.slug} href={`/${k.slug}`} label={k.label} onClick={() => setMenuOpen(false)} />
-              ))}
             </div>
           </div>
         </div>
