@@ -95,6 +95,17 @@ export const KITAPLAR: BookMeta[] = [
     kategori: 'kutubu-tisa',
   },
   {
+    slug: 'mishkat',
+    file: 'mishkat_ar.json',
+    turkishName: 'Mişkâtü\'l-Mesâbîh',
+    arabicName: 'مشكاة المصابيح',
+    from: '#1A1A00',
+    to: '#6B6B00',
+    totalHadiths: 4428,
+    translationPending: true,
+    kategori: 'secme-eserler',
+  },
+  {
     slug: 'edeblmufrad',
     file: 'edeblmufrad_ar.json',
     turkishName: 'el-Edebü\'l-Müfred',
