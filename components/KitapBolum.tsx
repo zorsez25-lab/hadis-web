@@ -60,7 +60,7 @@ export default function KitapBolum({
       <button
         onClick={() => setAcik(!acik)}
         style={{
-          width: '100%', background: 'none', border: 'none', cursor: 'pointer',
+          width: '100%', cursor: 'pointer',
           padding: '14px 20px', borderRadius: 14,
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           background: 'var(--surface)',
