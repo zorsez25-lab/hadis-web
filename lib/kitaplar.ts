@@ -55,6 +55,36 @@ export const KITAPLAR: BookMeta[] = [
     to: '#1A7A7A',
     totalHadiths: 5758,
   },
+  {
+    slug: 'darimi',
+    file: 'darimi_ar.json',
+    turkishName: 'Dârimî',
+    arabicName: 'سنن الدارمي',
+    from: '#1A3A5C',
+    to: '#2E6DA4',
+    totalHadiths: 3406,
+    translationPending: true,
+  },
+  {
+    slug: 'ahmed',
+    file: 'ahmed_ar.json',
+    turkishName: 'Müsned-i Ahmed',
+    arabicName: 'مسند أحمد',
+    from: '#3B1A00',
+    to: '#8B4513',
+    totalHadiths: 1374,
+    translationPending: true,
+  },
+  {
+    slug: 'malik',
+    file: 'malik_ar.json',
+    turkishName: 'Muvatta',
+    arabicName: 'موطأ مالك',
+    from: '#1A1A3B',
+    to: '#4A4A8B',
+    totalHadiths: 1985,
+    translationPending: true,
+  },
 ];
 
 export function getKitap(slug: string): BookMeta | undefined {

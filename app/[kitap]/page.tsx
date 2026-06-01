@@ -133,13 +133,18 @@ function HadithCard({ hadith, color, kitap }: { hadith: Hadith; color: string; k
       </Link>
 
       {/* Turkish */}
-      {hadith.turkish && (
+      {hadith.turkish ? (
         <Link href={`/${kitap}/hadis/${hadith.hadithNumber}`} style={{ textDecoration: 'none', display: 'block' }}>
           <div style={{ padding: '18px 26px', cursor: 'pointer' }}>
             <div style={{ fontSize: 10, fontWeight: 700, color: 'var(--text-3)', letterSpacing: 1.5, marginBottom: 10 }}>MEAL</div>
             <p style={{ fontSize: 15, color: 'var(--text-1)', lineHeight: 1.9 }}>{hadith.turkish}</p>
           </div>
         </Link>
+      ) : (
+        <div style={{ padding: '14px 26px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{ fontSize: 16 }}>🕐</span>
+          <span style={{ fontSize: 13, color: 'var(--text-3)', fontStyle: 'italic' }}>Türkçe çeviri yakında eklenecek</span>
+        </div>
       )}
     </div>
   );

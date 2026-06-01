@@ -33,4 +33,5 @@ export interface BookMeta {
   from: string;
   to: string;
   totalHadiths: number;
+  translationPending?: boolean;
 }

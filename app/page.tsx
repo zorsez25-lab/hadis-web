@@ -81,7 +81,9 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 14, borderTop: '1px solid var(--border)' }}>
-                    <span style={{ fontSize: 13, color: 'var(--text-3)', fontWeight: 500 }}>Hadisleri Oku</span>
+                    <span style={{ fontSize: 13, color: 'var(--text-3)', fontWeight: 500 }}>
+                      {k.translationPending ? '🕐 Çeviri Yakında' : 'Hadisleri Oku'}
+                    </span>
                     <div style={{ width: 28, height: 28, background: `${k.to}15`, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <span style={{ color: k.to, fontSize: 13, fontWeight: 700 }}>→</span>
                     </div>

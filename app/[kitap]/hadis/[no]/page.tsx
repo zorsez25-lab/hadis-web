@@ -118,7 +118,7 @@ export default async function HadisDetayPage({ params }: Props) {
         </div>
 
         {/* Turkish */}
-        {hadith.turkish && (
+        {hadith.turkish ? (
           <div style={{
             background: 'var(--surface)',
             border: '1px solid var(--border)',
@@ -132,6 +132,24 @@ export default async function HadisDetayPage({ params }: Props) {
               <span style={{ fontSize: 11, fontWeight: 800, color: 'var(--text-3)', letterSpacing: 2 }}>TÜRKÇE MEAL</span>
             </div>
             <p style={{ fontSize: 17, color: 'var(--text-1)', lineHeight: 2, fontWeight: 400 }}>{hadith.turkish}</p>
+          </div>
+        ) : (
+          <div style={{
+            background: 'var(--surface)',
+            border: '1px solid var(--border)',
+            borderRadius: 20,
+            padding: '22px 28px',
+            boxShadow: 'var(--shadow-sm)',
+            marginBottom: 16,
+            display: 'flex',
+            alignItems: 'center',
+            gap: 14,
+          }}>
+            <span style={{ fontSize: 24 }}>🕐</span>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-1)', marginBottom: 3 }}>Türkçe Çeviri Yakında</div>
+              <div style={{ fontSize: 13, color: 'var(--text-3)' }}>Bu kitabın Türkçe meali henüz hazırlanmaktadır.</div>
+            </div>
           </div>
         )}
 

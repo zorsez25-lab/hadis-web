@@ -10,6 +10,9 @@ const KITAPLAR_NAV = [
   { slug: 'ebudavud', label: 'Ebû Dâvûd' },
   { slug: 'ibnmace', label: 'İbn Mâce' },
   { slug: 'nesai', label: 'Nesâî' },
+  { slug: 'darimi', label: 'Dârimî' },
+  { slug: 'ahmed', label: 'Ahmed' },
+  { slug: 'malik', label: 'Muvatta' },
 ];
 
 export default function Navbar() {
