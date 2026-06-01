@@ -95,6 +95,17 @@ export const KITAPLAR: BookMeta[] = [
     kategori: 'kutubu-tisa',
   },
   {
+    slug: 'edeblmufrad',
+    file: 'edeblmufrad_ar.json',
+    turkishName: 'el-Edebü\'l-Müfred',
+    arabicName: 'الأدب المفرد',
+    from: '#3B2200',
+    to: '#C47A00',
+    totalHadiths: 1326,
+    translationPending: true,
+    kategori: 'secme-eserler',
+  },
+  {
     slug: 'riyazussalihin',
     file: 'riyazussalihin_ar.json',
     turkishName: 'Riyâzü\'s-Sâlihîn',
