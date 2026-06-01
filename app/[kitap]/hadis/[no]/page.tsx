@@ -5,6 +5,7 @@ import { loadBook } from '@/lib/hadis-utils';
 import { zincirOlustur } from '@/lib/sened-parser';
 import { raviById } from '@/lib/ravi-utils';
 import KopyalaButon from '@/components/KopyalaButon';
+import KeyboardNav from '@/components/KeyboardNav';
 
 type Props = { params: Promise<{ kitap: string; no: string }> };
 
@@ -27,6 +28,10 @@ export default async function HadisDetayPage({ params }: Props) {
 
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh' }}>
+      <KeyboardNav
+        prevUrl={prev ? `/${slug}/hadis/${prev.hadithNumber}` : undefined}
+        nextUrl={next ? `/${slug}/hadis/${next.hadithNumber}` : undefined}
+      />
 
       {/* ── Compact Header ── */}
       <div style={{
