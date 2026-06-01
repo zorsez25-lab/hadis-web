@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { KITAPLAR, BookMeta } from '@/lib/kitaplar';
+import { KITAPLAR } from '@/lib/kitaplar';
 import SearchBar from '@/components/SearchBar';
+import KitapBolum from '@/components/KitapBolum';
 
 export default function HomePage() {
   const total = KITAPLAR.reduce((s, k) => s + k.totalHadiths, 0).toLocaleString('tr-TR');
@@ -15,7 +15,7 @@ export default function HomePage() {
           <div style={{ maxWidth: 640 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
               <div style={{ width: 6, height: 6, background: '#52B788', borderRadius: '50%' }} />
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(183,228,199,0.6)', letterSpacing: 2 }}>KÜTÜBÜ TİS'A</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(183,228,199,0.6)', letterSpacing: 2 }}>KÜTÜBÜ TİS&apos;A</span>
             </div>
             <h1 className="hero-title" style={{ fontSize: 52, fontWeight: 900, color: '#F0EAD6', letterSpacing: -1.5, lineHeight: 1.05, marginBottom: 18 }}>
               Hadis<br />Külliyatı
@@ -44,31 +44,19 @@ export default function HomePage() {
 
       {/* Books */}
       <div className="books-section" style={{ maxWidth: 1160, margin: '0 auto', padding: '56px 40px 100px' }}>
-
-        {/* Kütübü Tis'a */}
-        <div style={{ marginBottom: 56 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-            <h2 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-1)' }}>Kütübü Tis&apos;a</h2>
-            <span style={{ fontSize: 13, color: 'var(--text-3)' }}>9 eser</span>
-          </div>
-          <div style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 24 }}>الكتب التسعة — Dokuz temel hadis kitabı</div>
-          <div className="books-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-            {tisa.map((k) => <KitapKarti key={k.slug} k={k} />)}
-          </div>
-        </div>
-
-        {/* Seçme Eserler */}
+        <KitapBolum
+          baslik="Kütübü Tis'a"
+          altBaslik="الكتب التسعة — Dokuz temel hadis kitabı"
+          kitaplar={tisa}
+          defaultAcik={true}
+        />
         {secme.length > 0 && (
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-              <h2 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-1)' }}>Seçme Eserler</h2>
-              <span style={{ fontSize: 13, color: 'var(--text-3)' }}>{secme.length} eser</span>
-            </div>
-            <div style={{ fontSize: 13, color: 'var(--text-3)', marginBottom: 24 }}>Müstakil hadis eserleri</div>
-            <div className="books-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-              {secme.map((k) => <KitapKarti key={k.slug} k={k} />)}
-            </div>
-          </div>
+          <KitapBolum
+            baslik="Seçme Eserler"
+            altBaslik="Müstakil hadis eserleri"
+            kitaplar={secme}
+            defaultAcik={true}
+          />
         )}
       </div>
 
@@ -86,51 +74,5 @@ export default function HomePage() {
         <span style={{ fontSize: 12, color: 'var(--text-3)' }}>Narrator Disambiguation</span>
       </div>
     </div>
-  );
-}
-
-function KitapKarti({ k }: { k: BookMeta }) {
-  return (
-    <Link key={k.slug} href={`/${k.slug}`} style={{ textDecoration: 'none' }}>
-      <div className="book-card" style={{
-        background: 'var(--surface)',
-        border: '1px solid var(--border)',
-        borderRadius: 18,
-        overflow: 'hidden',
-        boxShadow: 'var(--shadow-sm)',
-        transition: 'all 0.18s ease',
-        cursor: 'pointer',
-      }}>
-        <div style={{ height: 4, background: `linear-gradient(90deg, ${k.from}, ${k.to})` }} />
-        <div style={{ padding: '22px 24px 18px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 14 }}>
-            <div>
-              <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--text-1)', letterSpacing: -0.3 }}>{k.turkishName}</h3>
-              <div className="arabic" style={{ fontSize: 17, color: 'var(--text-2)', marginTop: 3, lineHeight: 1.6 }}>{k.arabicName}</div>
-            </div>
-            <div style={{
-              background: `${k.to}15`,
-              border: `1px solid ${k.to}25`,
-              borderRadius: 8,
-              padding: '5px 10px',
-              fontSize: 12,
-              fontWeight: 700,
-              color: k.to,
-              whiteSpace: 'nowrap',
-            }}>
-              {k.totalHadiths.toLocaleString('tr-TR')}
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 14, borderTop: '1px solid var(--border)' }}>
-            <span style={{ fontSize: 13, color: 'var(--text-3)', fontWeight: 500 }}>
-              {k.translationPending ? '🕐 Çeviri Yakında' : 'Hadisleri Oku'}
-            </span>
-            <div style={{ width: 28, height: 28, background: `${k.to}15`, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: k.to, fontSize: 13, fontWeight: 700 }}>→</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Link>
   );
 }
